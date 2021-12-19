@@ -12,10 +12,10 @@ private val LightColorPalette = darkColors(
 
 
 @Composable
-fun TumotanTheme(content: @Composable() () -> Unit) {
+fun TumotanAppTheme(content: @Composable() () -> Unit) {
     MaterialTheme(
         colors = LightColorPalette,
-        typography = kotlin.text.Typography,
+        typography = Typography,
         shapes = Shapes,
         content = content
     )
