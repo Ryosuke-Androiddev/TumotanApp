@@ -10,4 +10,8 @@ object PresentationConstants {
 
     const val SPLASH_SCREEN_DURATION = 2000L
 
+    const val EXPANDED_ANIMATION = 300
+    const val FADE_IN_ANIMATION = 300
+    const val COLLAPSE_ANIMATION = 300
+
 }
