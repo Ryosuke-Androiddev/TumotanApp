@@ -4,6 +4,7 @@ import com.example.tumotanapp.feature.data.data_source.remote.TumotanApi
 import com.example.tumotanapp.feature.data.repository.TumotanRepositoryImpl
 import com.example.tumotanapp.feature.domain.repository.TumotanRepository
 import com.example.tumotanapp.feature.domain.use_case.GetAllRoom
+import com.example.tumotanapp.feature.domain.use_case.GetRoomWithLevel
 import com.example.tumotanapp.feature.domain.use_case.unite.UseCase
 import com.example.tumotanapp.util.Constants
 import dagger.Module
@@ -38,7 +39,8 @@ object TumotanModule {
     @Singleton
     fun provideUseCase(repository: TumotanRepository): UseCase{
         return UseCase(
-            getAllRoom = GetAllRoom(repository)
+            getAllRoom = GetAllRoom(repository),
+            getRoomWithRevel = GetRoomWithLevel(repository)
         )
     }
 }
