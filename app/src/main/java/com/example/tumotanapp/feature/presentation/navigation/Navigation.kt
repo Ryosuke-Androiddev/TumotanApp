@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.tumotanapp.feature.presentation.home.component.HomeScreenFun
 import com.example.tumotanapp.feature.presentation.splash.SplashScreenFun
 
 @Composable
@@ -17,7 +18,7 @@ fun NavigationFun(navController: NavHostController){
             SplashScreenFun(navController = navController)
         }
         composable(route = Screen.HomeScreen.route){
-
+            HomeScreenFun(navController = navController)
         }
         composable(route = Screen.DetailScreen.route){
 
