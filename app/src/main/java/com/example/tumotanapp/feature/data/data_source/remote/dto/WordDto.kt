@@ -1,6 +1,7 @@
 package com.example.tumotanapp.feature.data.data_source.remote.dto
 
 
+import com.example.tumotanapp.feature.domain.model.Word
 import com.google.gson.annotations.SerializedName
 
 data class WordDto(
@@ -14,4 +15,13 @@ data class WordDto(
     val word: String,
     @SerializedName("wordId")
     val wordId: Int
-)
+){
+    fun toWord(): Word{
+        return Word(
+            imageUrl = imageUrl,
+            meaning = meaning,
+            word = word,
+            roomLevelId = roomLevelId
+        )
+    }
+}

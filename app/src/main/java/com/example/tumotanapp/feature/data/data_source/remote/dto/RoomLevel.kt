@@ -3,11 +3,11 @@ package com.example.tumotanapp.feature.data.data_source.remote.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class RoomDto(
+data class RoomLevel(
     @SerializedName("roomId")
     val roomId: Int,
-    @SerializedName("roomName")
-    val roomName: String,
-    @SerializedName("wordLevelDto")
-    val roomWithLevelDto: WordWithLevelDto
+    @SerializedName("roomLevel")
+    val roomLevel: Int,
+    @SerializedName("roomLevelId")
+    val roomLevelId: Int
 )
