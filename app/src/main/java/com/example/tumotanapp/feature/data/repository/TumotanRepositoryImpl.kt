@@ -3,6 +3,7 @@ package com.example.tumotanapp.feature.data.repository
 import com.example.tumotanapp.feature.data.data_source.remote.TumotanApi
 import com.example.tumotanapp.feature.domain.model.Room
 import com.example.tumotanapp.feature.domain.model.RoomWithLevel
+import com.example.tumotanapp.feature.domain.model.Word
 import com.example.tumotanapp.feature.domain.repository.TumotanRepository
 import com.example.tumotanapp.util.Result
 import kotlinx.coroutines.flow.Flow
@@ -37,12 +38,13 @@ class TumotanRepositoryImpl(
         }
     }
 
-    override suspend fun getRoomById(roomId: Int, roomLevel: Int): Flow<Result<Room>> = flow<Result<Room>> {
+    override fun getRoomById(roomId: Int, roomLevel: Int): Flow<Result<List<Word>>> = flow<Result<List<Word>>> {
         emit(Result.Loading())
 
         try {
 
-            val roomList = api.getRoomById(roomId, roomLevel)
+            val roomList = api.getRoomById(roomId, roomLevel).toWordList()
+            emit(Result.Success(roomList))
 
         } catch (e: HttpException){
 
@@ -65,8 +67,8 @@ class TumotanRepositoryImpl(
 
         try {
 
-            val roomList = api.getRoomWitheRevel(roomId).map { it.toRoomWithLevel() }
-            emit(Result.Success(roomList))
+            val roomDetail = api.getRoomWitheRevel(roomId).map { it.toRoomWithLevel() }
+            emit(Result.Success(roomDetail))
 
         } catch (e: HttpException){
 
