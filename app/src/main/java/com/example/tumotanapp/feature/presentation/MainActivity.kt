@@ -8,6 +8,8 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.tumotanapp.feature.presentation.navigation.NavigationFun
 import com.example.tumotanapp.ui.theme.TumotanAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,6 +22,9 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
 
+                    val navController = rememberNavController()
+
+                    NavigationFun(navController = navController)
                 }
             }
         }
