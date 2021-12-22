@@ -24,8 +24,6 @@ class StudyViewModel @Inject constructor(
     //USE CASE を使って，DtoからWordの情報を取得する必要がある
 
     init {
-
-        //こう処理する必要ある??
         savedStateHandle.get<String>("roomId")?.let { roomId ->
             savedStateHandle.get<String>("roomLevelId")?.let { roomLevel ->
                 getRoomById(roomId.toInt(), roomLevel.toInt())

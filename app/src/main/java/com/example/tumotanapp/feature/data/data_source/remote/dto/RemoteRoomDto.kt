@@ -4,7 +4,7 @@ package com.example.tumotanapp.feature.data.data_source.remote.dto
 import com.example.tumotanapp.feature.domain.model.Room
 import com.google.gson.annotations.SerializedName
 
-data class Room(
+data class RemoteRoomDto(
     @SerializedName("roomId")
     val roomId: Int,
     @SerializedName("roomName")

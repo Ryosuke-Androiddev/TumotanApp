@@ -2,7 +2,7 @@ package com.example.tumotanapp.feature.data.repository
 
 import com.example.tumotanapp.feature.data.data_source.remote.TumotanApi
 import com.example.tumotanapp.feature.domain.model.Room
-import com.example.tumotanapp.feature.domain.model.RoomWithLevel
+import com.example.tumotanapp.feature.domain.model.RoomDetail
 import com.example.tumotanapp.feature.domain.model.Word
 import com.example.tumotanapp.feature.domain.repository.TumotanRepository
 import com.example.tumotanapp.util.Result
@@ -38,12 +38,13 @@ class TumotanRepositoryImpl(
         }
     }
 
-    override fun getRoomById(roomId: Int, roomLevel: Int): Flow<Result<List<Word>>> = flow<Result<List<Word>>> {
+    override fun getRoomById(roomId: Int, roomLevelId: Int): Flow<Result<List<Word>>> = flow<Result<List<Word>>> {
+
         emit(Result.Loading())
 
         try {
 
-            val roomList = api.getRoomById(roomId, roomLevel).toWordList()
+            val roomList = api.getRoomById(roomId, roomLevelId).toWordList()
             emit(Result.Success(roomList))
 
         } catch (e: HttpException){
@@ -61,13 +62,13 @@ class TumotanRepositoryImpl(
         }
     }
 
-    override fun getRoomWithLevel(roomId: Int): Flow<Result<List<RoomWithLevel>>> = flow<Result<List<RoomWithLevel>>> {
+    override fun getRoomDetail(roomId: Int): Flow<Result<List<RoomDetail>>> = flow<Result<List<RoomDetail>>> {
 
         emit(Result.Loading())
 
         try {
 
-            val roomDetail = api.getRoomWitheRevel(roomId).map { it.toRoomWithLevel() }
+            val roomDetail = api.getRoomDetail(roomId).map { it.toRoomWithLevel() }
             emit(Result.Success(roomDetail))
 
         } catch (e: HttpException){

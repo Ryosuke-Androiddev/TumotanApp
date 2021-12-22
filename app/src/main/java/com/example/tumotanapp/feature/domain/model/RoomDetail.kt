@@ -1,6 +1,6 @@
 package com.example.tumotanapp.feature.domain.model
 
-data class RoomWithLevel(
+data class RoomDetail(
     val roomId: Int,
     val roomName: String,
     val roomLevelId: List<Int>

@@ -10,8 +10,8 @@ class GetWordListById @Inject constructor(
     private val repository: TumotanRepository
 ) {
 
-    operator fun invoke(roomId: Int, roomWithLevelId: Int): Flow<Result<List<Word>>> {
+    operator fun invoke(roomId: Int, roomLevelId: Int): Flow<Result<List<Word>>> {
 
-        return repository.getRoomById(roomId,roomWithLevelId)
+        return repository.getRoomById(roomId,roomLevelId)
     }
 }

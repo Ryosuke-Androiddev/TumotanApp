@@ -10,12 +10,12 @@ data class RoomDto(
     @SerializedName("roomName")
     val roomName: String,
     @SerializedName("wordLevelDto")
-    val wordWithLevelDto: WordWithLevelDto
+    val wordListDto: WordListDto
 ){
     fun toWordList(): List<Word>{
-        val wordList: List<Word> = wordWithLevelDto.wordList.map { wordDto ->
-            Word(wordDto.imageUrl,wordDto.meaning,wordDto.word,wordDto.roomLevelId)
 
+        val wordList: List<Word> = wordListDto.wordList.map { wordDto ->
+            Word(wordDto.imageUrl,wordDto.meaning,wordDto.word,wordDto.roomLevelId)
         }
 
         return wordList
