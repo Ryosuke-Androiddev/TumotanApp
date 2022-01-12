@@ -14,6 +14,7 @@ data class RoomDetailDto(
         return RoomDetail(
             room.roomId,
             room.roomName,
+            room.roomImage,
             roomLevelList.map { it.roomLevelId }
         )
     }

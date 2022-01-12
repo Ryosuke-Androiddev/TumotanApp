@@ -34,7 +34,6 @@ fun StudyScreenFun(
 
     ShowData()
 
-
 }
 
 @ExperimentalCoilApi
@@ -93,6 +92,7 @@ fun ShowData(
 
             Spacer(modifier = Modifier.height(160.dp))
 
+            //TODO you should define card Fun
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -136,11 +136,16 @@ fun CardViewComponent(
 ){
 
     wordList.forEach {
-        CardContent(word = it, index = index, count = wordList.size,modifier = modifier)
+        CardContent(
+            word = it,
+            backgroundColor = backgroundColor,
+            index = index,
+            count = wordList.size,
+            modifier = modifier
+        )
     }
 }
 
-//これ動いてないっぽい
 @ExperimentalCoilApi
 @Composable
 fun CardContent(

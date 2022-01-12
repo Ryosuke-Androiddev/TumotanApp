@@ -26,11 +26,11 @@ class DetailViewModel @Inject constructor(
     init {
 
         //key を与えないと例外が発生する Jsonのキーを取得しなければいけないので get<String>("キーの名前") にする必要がある
-        savedStateHandle.get<String>("roomId")?.let { roomId ->
-            getRoomByLevelId(roomId.toInt())
-        }
+//        savedStateHandle.get<String>("roomId")?.let { roomId ->
+//            getRoomByLevelId(roomId.toInt())
+//        }
 
-        //getRoomByLevelId(500)
+        getRoomByLevelId(500)
     }
 
     private fun getRoomByLevelId(roomId: Int){

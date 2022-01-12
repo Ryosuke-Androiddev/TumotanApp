@@ -1,6 +1,7 @@
 package com.example.tumotanapp.feature.presentation.navigation
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -11,6 +12,7 @@ import com.example.tumotanapp.feature.presentation.home.component.HomeScreenFun
 import com.example.tumotanapp.feature.presentation.splash.SplashScreenFun
 import com.example.tumotanapp.feature.presentation.study.components.StudyScreenFun
 
+@ExperimentalMaterialApi
 @ExperimentalCoilApi
 @ExperimentalFoundationApi
 @Composable

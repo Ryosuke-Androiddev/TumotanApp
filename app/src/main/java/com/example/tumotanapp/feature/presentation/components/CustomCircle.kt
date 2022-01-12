@@ -28,7 +28,7 @@ fun CustomCircleComponent(
     indicatorValue: Float = 100f,
     maxIndicatorValue: Int = 100,
     backgroundIndicatorColor: Color = ButtonBackgroundRed, //バックグラウンドの色の状態 ここの色を赤にしてforegroundの緑の色を変化させるような処理を書けばいい
-    strokeWidth: Float = 45f,
+    strokeWidth: Float = 15f,
     correctForegroundColor: Color = ButtonBackgroundGreen
 ){
     val animatedIndicatorValue = remember {
@@ -51,7 +51,7 @@ fun CustomCircleComponent(
             .size(canvasSize)
             .drawBehind {
                 //内側のサイズ
-                val contentSize = size / 1.25f
+                val contentSize = size / 1.5f
                 BackgroundIndicator(
                     componentSize = contentSize,
                     indicatorColor = backgroundIndicatorColor,

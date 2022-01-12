@@ -8,13 +8,16 @@ data class RemoteRoomDto(
     @SerializedName("roomId")
     val roomId: Int,
     @SerializedName("roomName")
-    val roomName: String
+    val roomName: String,
+    @SerializedName("roomImage")
+    val roomImage: String
 ){
 
     fun toRoom(): Room {
         return Room(
             roomId = roomId,
-            roomName = roomName
+            roomName = roomName,
+            roomImage = roomImage
         )
     }
 }
