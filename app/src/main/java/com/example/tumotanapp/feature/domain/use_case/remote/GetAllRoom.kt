@@ -1,4 +1,4 @@
-package com.example.tumotanapp.feature.domain.use_case
+package com.example.tumotanapp.feature.domain.use_case.remote
 
 import com.example.tumotanapp.feature.domain.model.Room
 import com.example.tumotanapp.feature.domain.repository.TumotanRepository

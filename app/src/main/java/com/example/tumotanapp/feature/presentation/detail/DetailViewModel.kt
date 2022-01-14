@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.tumotanapp.feature.domain.use_case.GetRoomDetail
+import com.example.tumotanapp.feature.domain.use_case.remote.GetRoomDetail
 import com.example.tumotanapp.util.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn

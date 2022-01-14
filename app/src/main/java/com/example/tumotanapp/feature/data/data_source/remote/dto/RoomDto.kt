@@ -15,7 +15,7 @@ data class RoomDto(
     fun toWordList(): List<Word>{
 
         val wordList: List<Word> = wordListDto.wordList.map { wordDto ->
-            Word(wordDto.imageUrl,wordDto.meaning,wordDto.word,wordDto.roomLevelId)
+            Word(wordDto.imageUrl,wordDto.meaning,wordDto.word,wordDto.roomLevelId,wordDto.wordId)
         }
 
         return wordList

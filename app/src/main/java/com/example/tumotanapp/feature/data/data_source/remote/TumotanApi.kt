@@ -12,7 +12,7 @@ interface TumotanApi {
     suspend fun getAllRoom(): List<RemoteRoomDto>
 
     @GET("/room/{roomId}/{roomLevel}")
-    suspend fun getRoomById(@Path("roomId") roomId: Int, @Path("roomLevel") roomLevel: Int): RoomDto
+    suspend fun getWordListById(@Path("roomId") roomId: Int, @Path("roomLevel") roomLevel: Int): RoomDto
 
     //Json response is List<RoomDetailDto>, must be this style here
     @GET("/room/{roomId}")

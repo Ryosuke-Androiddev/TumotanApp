@@ -10,6 +10,7 @@ import coil.annotation.ExperimentalCoilApi
 import com.example.tumotanapp.feature.presentation.detail.components.DetailScreenFun
 import com.example.tumotanapp.feature.presentation.home.component.HomeScreenFun
 import com.example.tumotanapp.feature.presentation.splash.SplashScreenFun
+import com.example.tumotanapp.feature.presentation.study.components.StudyCard
 import com.example.tumotanapp.feature.presentation.study.components.StudyScreenFun
 
 @ExperimentalMaterialApi
@@ -32,7 +33,8 @@ fun NavigationFun(navController: NavHostController){
             DetailScreenFun(navController = navController)
         }
         composable(route = Screen.StudyScreen.route + "/{roomId}" + "/{roomLevelId}"){
-            StudyScreenFun(navController = navController)
+            //StudyScreenFun(navController = navController)
+            StudyCard(navController = navController)
         }
         composable(route = Screen.ResultScreen.route){
 

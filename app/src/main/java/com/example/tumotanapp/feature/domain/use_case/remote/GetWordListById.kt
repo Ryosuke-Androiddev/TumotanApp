@@ -1,4 +1,4 @@
-package com.example.tumotanapp.feature.domain.use_case
+package com.example.tumotanapp.feature.domain.use_case.remote
 
 import com.example.tumotanapp.feature.domain.model.Word
 import com.example.tumotanapp.feature.domain.repository.TumotanRepository
@@ -12,6 +12,6 @@ class GetWordListById @Inject constructor(
 
     operator fun invoke(roomId: Int, roomLevelId: Int): Flow<Result<List<Word>>> {
 
-        return repository.getRoomById(roomId,roomLevelId)
+        return repository.getWordListById(roomId,roomLevelId)
     }
 }

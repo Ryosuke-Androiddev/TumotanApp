@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.tumotanapp.feature.domain.use_case.GetWordListById
+import com.example.tumotanapp.feature.domain.use_case.model.UseCase
 import com.example.tumotanapp.util.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class StudyViewModel @Inject constructor(
-    private val getWordListById: GetWordListById,
+    private val useCase: UseCase,
     private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
@@ -33,7 +33,7 @@ class StudyViewModel @Inject constructor(
 
     //ここのIdの取得方法をここで詳しく定義する
     private fun getRoomById(roomId: Int, roomLevel: Int){
-        getWordListById(roomId, roomLevel).onEach { result ->
+        useCase.getWordList(roomId, roomLevel).onEach { result ->
             when(result){
                 is Result.Success -> {
                     _wordState.value = result.data?.let { WordState(word = it ) } ?: WordState(word = emptyList())

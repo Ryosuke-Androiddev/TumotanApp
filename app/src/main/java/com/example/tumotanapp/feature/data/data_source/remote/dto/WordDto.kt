@@ -21,7 +21,8 @@ data class WordDto(
             imageUrl = imageUrl,
             meaning = meaning,
             word = word,
-            roomLevelId = roomLevelId
+            roomLevelId = roomLevelId,
+            wordId = wordId
         )
     }
 }
