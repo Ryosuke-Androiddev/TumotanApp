@@ -1,7 +1,7 @@
 package com.example.tumotanapp.feature.domain.repository
 
-import com.example.tumotanapp.feature.data.data_source.local.db.entity.AcceptedWord
-import com.example.tumotanapp.feature.data.data_source.local.db.entity.RejectedWord
+import com.example.tumotanapp.feature.data.data_source.local.db.entity.AcceptedWordEntity
+import com.example.tumotanapp.feature.data.data_source.local.db.entity.RejectedWordEntity
 import com.example.tumotanapp.feature.domain.model.Room
 import com.example.tumotanapp.feature.domain.model.RoomDetail
 import com.example.tumotanapp.feature.domain.model.Word
@@ -24,18 +24,20 @@ interface TumotanRepository {
 
     //Accepted Word
 
-    fun getAllAcceptedWord(): Flow<List<AcceptedWord>>
+    fun getAllAcceptedWord(): Flow<Result<List<AcceptedWordEntity>>>
 
-    suspend fun insertAcceptedWord(word: AcceptedWord)
+    suspend fun insertAcceptedWord(word: AcceptedWordEntity)
 
-    suspend fun deleteAcceptedWord(word: AcceptedWord)
+    suspend fun deleteAcceptedWord(word: AcceptedWordEntity)
+
+    fun getAcceptedWordById(roomLevelId: Int): Flow<Result<List<AcceptedWordEntity>>>
 
     //Rejected Word
 
-    fun getAllRejectedWord(): Flow<List<RejectedWord>>
+    fun getAllRejectedWord(): Flow<Result<List<RejectedWordEntity>>>
 
-    suspend fun insertRejectedWord(word: RejectedWord)
+    suspend fun insertRejectedWord(word: RejectedWordEntity)
 
-    suspend fun deleteRejectedWord(word: RejectedWord)
+    suspend fun deleteRejectedWord(word: RejectedWordEntity)
 
 }

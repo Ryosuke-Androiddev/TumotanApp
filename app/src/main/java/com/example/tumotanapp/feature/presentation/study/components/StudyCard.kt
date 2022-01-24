@@ -39,6 +39,8 @@ fun StudyCard(
 
     val wordList = ListProvider.listProvider
 
+    val word = viewModel.wordState.value.word
+
     var current by remember { mutableStateOf(0) }
     val visible by remember { mutableStateOf(wordList.size) }
 
@@ -56,7 +58,7 @@ fun StudyCard(
             val visibleCard: Int = StrictMath.min(visible,listSize - current)
 
 
-            wordList.asReversed().forEachIndexed { index, word ->
+            word.forEachIndexed { index, word ->
 
                 DraggableCard(
                     word = word,

@@ -1,6 +1,7 @@
 package com.example.tumotanapp.feature.domain.use_case.model
 
 import com.example.tumotanapp.feature.domain.use_case.accepted.DeleteAcceptedWord
+import com.example.tumotanapp.feature.domain.use_case.accepted.GetAcceptedListById
 import com.example.tumotanapp.feature.domain.use_case.accepted.GetAllAcceptedList
 import com.example.tumotanapp.feature.domain.use_case.accepted.InsertAcceptedWord
 import com.example.tumotanapp.feature.domain.use_case.rejected.DeleteRejectedWord
@@ -17,6 +18,7 @@ data class UseCase(
     val getAcceptedList: GetAllAcceptedList,
     val insertAcceptedWord: InsertAcceptedWord,
     val deleteAcceptedWod: DeleteAcceptedWord,
+    val getAcceptedListById: GetAcceptedListById,
     val getRejectedList: GetAllRejectedList,
     val insertRejectedWord: InsertRejectedWord,
     val deleteRejectedWord: DeleteRejectedWord

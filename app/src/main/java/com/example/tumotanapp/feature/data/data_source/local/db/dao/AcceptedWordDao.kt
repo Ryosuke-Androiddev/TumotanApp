@@ -1,18 +1,20 @@
 package com.example.tumotanapp.feature.data.data_source.local.db.dao
 
 import androidx.room.*
-import com.example.tumotanapp.feature.data.data_source.local.db.entity.AcceptedWord
-import kotlinx.coroutines.flow.Flow
+import com.example.tumotanapp.feature.data.data_source.local.db.entity.AcceptedWordEntity
 
 @Dao
 interface AcceptedWordDao {
 
     @Query("SELECT * FROM accepted_word")
-    fun getAllAcceptedWord(): Flow<List<AcceptedWord>>
+    suspend fun getAllAcceptedWord(): List<AcceptedWordEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAcceptedWord(word: AcceptedWord)
+    suspend fun insertAcceptedWord(word: AcceptedWordEntity)
 
     @Delete
-    suspend fun deleteAcceptedWord(word: AcceptedWord)
+    suspend fun deleteAcceptedWord(word: AcceptedWordEntity)
+
+    @Query("SELECT * FROM accepted_word WHERE roomLevelId=:roomLevelId")
+    suspend fun getAcceptedWordById(roomLevelId: Int): List<AcceptedWordEntity>
 }

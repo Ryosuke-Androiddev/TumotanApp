@@ -2,12 +2,15 @@ package com.example.tumotanapp.di.module
 
 import android.app.Application
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.tumotanapp.feature.data.data_source.local.db.WordDatabase
 import com.example.tumotanapp.feature.data.data_source.remote.TumotanApi
 import com.example.tumotanapp.feature.data.repository.TumotanRepositoryImpl
 import com.example.tumotanapp.feature.data.util.DataLayerConstants
 import com.example.tumotanapp.feature.domain.repository.TumotanRepository
 import com.example.tumotanapp.feature.domain.use_case.accepted.DeleteAcceptedWord
+import com.example.tumotanapp.feature.domain.use_case.accepted.GetAcceptedListById
 import com.example.tumotanapp.feature.domain.use_case.accepted.GetAllAcceptedList
 import com.example.tumotanapp.feature.domain.use_case.accepted.InsertAcceptedWord
 import com.example.tumotanapp.feature.domain.use_case.remote.GetAllRoom
@@ -71,6 +74,7 @@ object TumotanModule {
             getAcceptedList = GetAllAcceptedList(repository),
             insertAcceptedWord = InsertAcceptedWord(repository),
             deleteAcceptedWod = DeleteAcceptedWord(repository),
+            getAcceptedListById = GetAcceptedListById(repository),
             getRejectedList = GetAllRejectedList(repository),
             insertRejectedWord = InsertRejectedWord(repository),
             deleteRejectedWord = DeleteRejectedWord(repository)

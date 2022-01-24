@@ -4,11 +4,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.tumotanapp.feature.data.util.DataLayerConstants
 
-@Entity(tableName = DataLayerConstants.ACCEPTEDWORD_TABLE_NAME)
-data class AcceptedWord(
+@Entity(tableName = DataLayerConstants.REJECTEDWORD_TABLE_NAME)
+data class RejectedWordEntity(
     @PrimaryKey(autoGenerate = false)
     val wordId: Int,
     val word: String,
     val meaning: String,
-    val wordState: Float = 0f
+    val wordState: Float = 0f,
 )

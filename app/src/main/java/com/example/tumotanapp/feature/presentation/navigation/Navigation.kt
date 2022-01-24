@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import coil.annotation.ExperimentalCoilApi
 import com.example.tumotanapp.feature.presentation.detail.components.DetailScreenFun
 import com.example.tumotanapp.feature.presentation.home.component.HomeScreenFun
+import com.example.tumotanapp.feature.presentation.result.components.ResultScreenFun
 import com.example.tumotanapp.feature.presentation.splash.SplashScreenFun
 import com.example.tumotanapp.feature.presentation.study.components.StudyCard
 import com.example.tumotanapp.feature.presentation.study.components.StudyScreenFun
@@ -37,7 +38,7 @@ fun NavigationFun(navController: NavHostController){
             StudyCard(navController = navController)
         }
         composable(route = Screen.ResultScreen.route){
-
+            ResultScreenFun(navController = navController)
         }
     }
 }
