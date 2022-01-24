@@ -1,11 +1,9 @@
 # TumotanApp
 
-##画面構成
-
-![tumotan](https://user-images.githubusercontent.com/80034173/150844512-1b31be00-f77e-466a-aff0-2d1997b19299.gif)
+#画面構成
 
 
-##アーキテクチャ
+#アーキテクチャ
 ---
 
 **Clean Architecture**を採用しました。
@@ -16,26 +14,26 @@ domain → presentationでは、UseCaseで呼び出した情報を、ViewModel�
 ##使用した技術
 Jetpack Compose, Hilt, Retrofit, Room, Coroutine(Kotlin Flow)
 
-##Jetpack Compose
+#Jetpack Compose
 ---
 
 宣言的UIである。Jetpack Composeを用いてUIの構築を行いました。
 
-##Hilt
+#Hilt
 ---
 
 UseCaseをまとめた、data classの作成、Retorofit Instance, Room Instance, Repository Instanceの生成を、Moduleで行いました。
 
-##Retrofit
+#Retrofit
 ---
 
-###BaseURL = https://tumotan-service.herokuapp.com/
+**BaseURL = https://tumotan-service.herokuapp.com/**
 
 ``room``‥学習のできる教材の一覧を表示する
 ``room/{roomId}``‥選択した教材の詳細を表示する
 ``room/{roomId}/{roomLevelId}``‥選択したレベルに応じて、単語とそのイメージを表示し学習を開始する。
 
-##Room
+Room
 ---
 
 2つのテーブルを定義し、学習画面で確認した単語をローカルのデータベースに保存するために使用しました。
@@ -43,7 +41,7 @@ UseCaseをまとめた、data classの作成、Retorofit Instance, Room Instance
 ``AcceptedWord``‥知っている単語を保存するためのテーブル
 ``RejectedWord``‥知らない単語を保存するためのテーブル
 
-##Coroutine(Kotlin Flow)
+Coroutine(Kotlin Flow)
 ---
 
 Retorofitで呼び出しで取得するListを、Flowを使って取得する。
