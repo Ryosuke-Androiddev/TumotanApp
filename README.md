@@ -1,6 +1,7 @@
 # TumotanApp
 
 画面構成
+![tumotan-gif](https://user-images.githubusercontent.com/80034173/150845793-12104d63-586d-4b6d-bc93-76b4afed69c2.gif)
 
 
 アーキテクチャ
@@ -24,7 +25,7 @@ Hilt
 
 UseCaseをまとめた、data classの作成、Retorofit Instance, Room Instance, Repository Instanceの生成を、Moduleで行いました。
 
-#Retrofit
+Retrofit
 ---
 
 **BaseURL = https://tumotan-service.herokuapp.com/**
