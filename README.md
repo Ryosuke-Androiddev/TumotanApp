@@ -1,7 +1,15 @@
 # TumotanApp
 
-画面構成
-![tumotan-gif](https://user-images.githubusercontent.com/80034173/150845793-12104d63-586d-4b6d-bc93-76b4afed69c2.gif)
+画面構成　SplashScreen, HomeScreen, DetailScreen, StudyScreen, ResultScreen(StudyScreenでの一部実装が終わっていないので、まだ実装が終わっていない)
+
+Splash Screen → HomeScreen
+![homeScreen](https://user-images.githubusercontent.com/80034173/150848417-b53cb41b-ac1e-4bd8-8dc2-a98b5cff21d8.gif)
+
+HomeScreen → DetailScreen
+![DetailScreen](https://user-images.githubusercontent.com/80034173/150848511-9c2b36c3-f428-4871-a263-20f89b90849f.gif)
+
+DetailScreen → StudyScreen
+![StudyScreen](https://user-images.githubusercontent.com/80034173/150848754-47cb1260-a0cf-4df8-87d8-b1dc11208a92.gif)
 
 
 アーキテクチャ
