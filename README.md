@@ -1,9 +1,9 @@
 # TumotanApp
 
-#画面構成
+画面構成
 
 
-#アーキテクチャ
+アーキテクチャ
 ---
 
 **Clean Architecture**を採用しました。
@@ -14,12 +14,12 @@ domain → presentationでは、UseCaseで呼び出した情報を、ViewModel�
 ##使用した技術
 Jetpack Compose, Hilt, Retrofit, Room, Coroutine(Kotlin Flow)
 
-#Jetpack Compose
+Jetpack Compose
 ---
 
 宣言的UIである。Jetpack Composeを用いてUIの構築を行いました。
 
-#Hilt
+Hilt
 ---
 
 UseCaseをまとめた、data classの作成、Retorofit Instance, Room Instance, Repository Instanceの生成を、Moduleで行いました。
